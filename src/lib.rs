@@ -15,5 +15,5 @@ pub fn extract_tx_version(raw_tx_hex: &str) -> Result<u32, String> {
     }
 
     let version = u32::from_str_radix(&reversed_version_hex, 16);
-    return version.map_err(|e| format!("Hex decode error"));
+    return version.map_err(|e| format!("Hex decode error: {}", e));
 }
